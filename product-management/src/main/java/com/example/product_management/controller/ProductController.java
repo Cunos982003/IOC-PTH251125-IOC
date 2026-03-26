@@ -29,14 +29,14 @@ public class ProductController {
     }
 
     // PUT - cập nhật
-    @PutMapping("/api/products/{id}")
+    @PutMapping("/{id}")
     public Product updateProduct(@PathVariable int id,
                                  @RequestBody Product product) {
         return productService.updateProduct(id, product);
     }
 
     // DELETE - xóa
-    @DeleteMapping("/api/products/{id}")
+    @DeleteMapping("/{id}")
     public String deleteProduct(@PathVariable int id) {
         boolean deleted = productService.deleteProduct(id);
         return deleted ? "Deleted successfully" : "Product not found";
